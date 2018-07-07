@@ -1,0 +1,774 @@
+html, body, div {
+    height: 100%;
+    background-color: #334d99;
+}
+.container {
+    max-width: none;
+}
+div.invisible {
+    transition: 0s !important;
+}
+div.home-button, div.left-pane, div.system-button, div.chat-heading, div.chat-feed, div.right-pane, div.chat-box {
+    animation: daybreak 3s;
+}
+@keyframes daybreak {
+    from {background-color: #0d1326;} 
+    to {background-color: #334d99;}
+}
+
+/* ~~ left navigation pane ~~ */
+.home-button {
+    height: 10%;
+}
+.logo-img {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+}
+.side-pane {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}  
+.left-pane {
+    height: 45%;
+    width: 100%;
+    margin: 0;
+    border-top: 0.5px dotted #e6e6e6;
+}
+.action-area {
+    position: relative;
+}
+button.post-card {
+	margin: 5%;
+	padding: 7px;
+	height: 40px;
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,0.5);
+	background: linear-gradient(to bottom, #e1b137, #e1b137 50%, #e4ba4e 50%, #e4ba4e);
+	background-size: 100% 8px;
+	font-size: 14px;
+	font-weight: bold;
+	color:white;
+	width: 90%;
+    text-align: left;
+    white-space: normal;
+}
+button.post-card:hover {
+    background: linear-gradient(to bottom, #dea821, #dea821 50%, #e1b137 50%, #e1b137);
+	background-size: 100% 8px;
+}
+button.post-card:active {
+    box-shadow: none;
+}
+button.post-card.draft-card {
+	background: #e8c264;
+	background: linear-gradient(to bottom, #eed490, #eed490 50%, #ebcb7a 50%, #ebcb7a);
+	background-size: 100% 8px;
+    text-shadow: none;
+    font-style: italic;
+    font-weight: 500;
+	color: black;
+}
+button.post-card.draft-card:hover {
+	background: linear-gradient(to bottom, #e8c264, #e8c264 50%, #e4ba4e 50%, #e4ba4e);
+	background-size: 100% 8px;
+}
+.action-area p {
+    color: #e6e6e6;
+    text-align: center;
+}
+.action-pane {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+	border-top: none;
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,0.5);
+	border-radius: 1rem;
+	background-color: #6680cc;
+}
+.action-pane.slides {
+    animation: slideRight 0.3s;
+}
+@keyframes slideRight {
+    from {left: -400px;}
+    to {left: 0;}
+}
+.exit-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: auto;
+    width: auto;
+    font-size: 1.5em;
+    padding-right: 5px;
+    background-color: transparent;
+}
+.exit-button a {
+    color: #e6e6e6;
+}
+.exit-button a:hover {
+    color: #cccccc;
+}
+div.action-pane img {
+    display: block;
+    margin: 10% auto 5% auto;
+    position: relative;
+    width: auto;
+    height: auto;
+	max-width: 90%;
+	max-height: 60%;
+}
+.menuButtonContainer {
+    position: relative;
+    width: 33.33%;
+    padding-top: 33.33%;
+    height: 10%;
+    float: left;
+    background-color: transparent;
+	text-align: center;
+}
+.menuButton {
+    border-radius: 50%;
+    margin-left: 2.5%;
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 2.2em;
+    text-align: center;
+    padding-top: 24%;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.5);
+    transition: 0.1s;
+}
+.menuButton:active {
+    box-shadow: none;
+}
+#chatButton {
+    top: -28%;
+    background: #009900;
+    color: #7CFC00;
+}
+#chatButton:hover {
+    background: #008000;
+}
+#vidButton {
+    background: #66cc00;
+    color: #009900;
+}
+#vidButton:hover {
+    background: #59b300;
+}
+#docButton {
+    top: -28%;
+    background: #e1b137;
+    color: #FFFF00;
+}
+#docButton:hover {
+    background: #daa520;
+}
+.menuButton.greyed-out {
+    background: grey!important;
+    color: dimgrey!important;
+    pointer-events: none;
+    cursor: default;
+    box-shadow: none;
+}
+#privChat {
+    border: none;
+    text-align: center;
+}
+#privChat div {
+	background-color: transparent;
+}
+h5 {
+    color: #e6e6e6;
+    padding-top: 5%;
+    padding-left: 15px;
+    text-align: left;
+    font-family: "Arial Black", Gadget, sans-serif;    
+}
+#privChat > div:first-child{
+    height: 10%;
+}
+#priv-chat-feed {
+    height: 70%;
+    width: 100%;
+    padding: 5px 15px 0px 15px;
+    font-size: 0.8em;
+    float: left;
+}
+#priv-chat-feed-inner {
+    width: 100%;
+    height: 100%;
+    border: 0.5px dotted #e6e6e6;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    overflow-y: auto;
+}
+#priv-chat-box {
+    float: left;
+    height: 20%;
+    width: 100%;
+    padding: 0px 15px 15px 15px;
+    margin-bottom: 0 !important;
+    text-align: right;
+}
+#priv-chat-box textarea {
+    width: 100%;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    font-size: 0.8em;
+}
+#priv-chat-box button {
+    border: 0.5px dotted #e6e6e6;
+}
+#priv-chat-feed-inner .overlay {
+    font-weight: bold;
+    font-size: 1.5em;
+    font-style: italic;
+    background: rgba(255,255,255,0.5);
+    height: auto;
+    position: relative;
+    top: 20%;
+} 
+#vidChat {
+    border: none;
+    overflow: hidden;
+    text-align: center;
+}
+#vidChat img {
+    margin: 5% auto 0 auto;
+    position: relative;
+    left: -25%;
+    width: 150%;
+	max-width: none;
+	max-height: none;
+    height: auto;
+}
+#vidChat .overlay {
+    background: rgba(255,255,255,0.5);
+    text-align: center;
+    padding-top: 30%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#vidChat p {
+    font-weight: bold;
+    font-size: 1.5em;
+    font-style: italic;
+    color: black;
+    background: rgba(255,255,255,0.5);
+}
+#endVidContainer {
+    top: 28.5%;
+    left: 33.33%;
+}
+#docPaneContainer {
+    height: auto;
+    background-color: transparent;
+}
+.heads-pane {
+    padding-top: 2px;
+}
+.heads {
+    font-size: 0.8em;
+    font-weight: bold;
+    height: 25%;
+    width: 50%;
+    text-align: center;
+    padding-top: 4px;
+    margin: 0;
+    float: left;
+    position: relative;
+    background-color: transparent;
+}
+
+/* SOURCE: Tooltip text from https://www.w3schools.com/css/css_tooltip.asp */
+.heads .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    line-height: 13px;
+    background-color: #fff;
+    color: black;
+    opacity: 0.8;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text */
+    position: absolute;
+    width: 80px;
+    top: 70%;
+    left: 50%; 
+    margin-left: -40px;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the div */
+div.heads:hover .tooltiptext {
+    visibility: visible;
+}
+/* END SOURCE */
+
+div.heads img {
+    display: block;
+    margin: auto auto;
+    position: relative;
+    height: 90%;
+    width: auto;
+    border-radius: 50%;
+    border: 3px solid #343a40;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.5);
+    transition: 0.2s;
+}
+div.heads img:hover, .tooltiptext:hover + img {
+    border-color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+div.heads img.online {
+    border-color: #009900;
+    /*box-shadow: 0 4px 8px 0 rgba(255,255,255,0.5);*/
+}
+div.heads img.online:hover, .tooltiptext:hover + img.online {
+    border-color: #008000;
+    /*box-shadow: 0 6px 10px 0 rgba(255,255,255,0.5);*/
+}
+div.heads img:active, .tooltiptext:active + img, div.heads img.online:active, .tooltiptext:active + img.online  {
+    border-width: 0;
+    box-shadow: none;
+}
+.docAlert {
+    border-radius: 50%;
+    position: absolute;
+    bottom: 8%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    padding-top: 4px;
+    background: #e1b137;
+    right: 17%;
+    color:#FFFF00;
+    animation: blinking 1s steps(1) infinite;
+}
+@keyframes blinking {
+    50% {opacity: 0;}
+}
+.chatAlert {
+    border-radius: 50%;
+    position: absolute;
+    bottom: 8%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    padding-top: 4px;
+    background: #009900;
+    left: 17%;
+    color: #7CFC00;
+}
+
+
+
+/* ~~ central work space ~~ */
+div.text-center div {
+    background: transparent;
+}
+h1 { margin-bottom: 40px; font-family: "Arial Black", Gadget, sans-serif;}
+div#problem-set-img-area {
+    display: table;
+    text-align: center;
+    max-height: 40%;
+    margin: auto auto;
+}
+div.problem-tiled-container {
+    display: table-cell; 
+    vertical-align: middle; 
+}
+div.problem-set-img-tiled {
+    height: auto;
+    float: left;
+}
+div.problem-set-img-tiled#Dali0 {width: 32.51%;}
+div.problem-set-img-tiled#Dali1 {width: 31.38%;}
+div.problem-set-img-tiled#Dali2 {width: 36.11%;}
+div.problem-set-img-tiled img {
+    width: 95%;
+    height: auto;
+}
+p.problem, p.img-title, p.edit-img-title {
+    clear: left;
+    margin: auto, auto;
+}
+div.problem-set-img-enlarged {
+    width: 100%;
+    position: relative;
+    vertical-align: middle; 
+    text-align: center;
+    display: none;
+}
+div.img-pane-container {
+    width: 60%;
+    display: inline-block;
+    position: relative;
+}
+div.img-container {
+    display: table;
+    float: left;
+    width: 75%;
+    text-align: center;
+}
+div.img-wrapper {
+    display: table-cell; 
+    vertical-align: middle; 
+    text-align: center;
+}
+img.mySlides {
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    transition: 1s;
+}
+.cyclebutton {
+    float: left;
+    text-align: center;
+    font-size: 5em;
+    height: auto;
+    height: 100%;
+    display: table;
+    padding: 10px;
+}
+.cyclebutton a {
+    color: #e6e6e6;
+    display: table-cell; 
+    vertical-align: middle; 
+    text-align: center;
+}
+.cyclebutton a:hover {
+    color: #cccccc;
+}
+button.main-edit {
+    font-size: 2em !important;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.5);
+    margin-top: 40px;
+}
+
+/* SOURCE https://www.w3schools.com/howto/howto_css_modals.asp */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4) !important; /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+div.modal-content {
+    background-color: #fefefe !important;
+    margin: 5% auto 5% auto; /* centered */
+    border: 1px solid #888;
+    height: 90%;
+    width: 80%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.5);
+    animation-name: slideBottom;
+    animation-duration: 0.4s;
+}
+div.modal-content div.condensed-problem {
+    padding: 20px;
+}
+div.modal-content div.edit-area {
+    padding: 20px;
+}
+
+/* Add Animation */
+@keyframes slideBottom {
+    from {bottom: -1200px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+/* END SOURCE */
+
+div.condensed-problem {
+    height: 20%;
+    background-color: #19264d !important;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+div.condensed-problem p {
+    color: white;
+    text-align: left;
+    font-size: 0.8em;
+}
+div.condensed-problem p.edit-img-title { text-align: center;}
+div.condensed-problem div.img-pane-container {
+    float: right;
+    width: 30%;
+    text-align: center;
+    margin-left: 30px;
+}
+div.condensed-problem div {padding: 0;}
+div.condensed-problem div.cyclebutton {
+    font-size: 2em;
+    padding: 2px;
+}
+div.condensed-problem div.img-pane-container img {
+    height: 100px;
+    margin: auto auto;
+}
+div.edit-area {height: 70%;}
+div.edit-area img {
+    width: 100%;
+    border: 0.5px dotted black;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+}
+div.edit-area textarea {
+    border: 0.5px dotted black;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: none;
+    background-color: transparent;
+    background-image: url("../img/Connie'sDraft.png");
+    background-size: 100%;
+}
+div.edit-button-area {
+    height: 15%;
+}
+button.modal-edit{ 
+    font-size: 1.5em !important;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.5);
+    margin: auto 10px;
+}
+button.modal-edit:active {
+    box-shadow: none;
+}
+button.modal-edit#post {
+    background: #e1b137;
+    color: #FFFF00;
+}
+button.modal-edit#post:hover {
+    background: #daa520;
+}
+div.modal-popup {
+    background-color: #fefefe !important;
+    margin: 25% auto 35% auto; /* centered */
+    border: 1px solid #888;
+    height: 30%;
+    width: 50%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.7);
+    border-radius: 0.3rem;
+    display: table;
+    text-align: center;
+}
+div.popup-wrapper {
+    display: table-cell;
+    vertical-align: center;
+    padding: 50px 30px;
+}
+div.popup-wrapper h4 {
+    margin-bottom: 30px;
+}
+div.post-wrapper {
+    padding: 20px;
+    overflow-y: auto;
+    width: 80%;
+    float: left !important;
+}
+div.post-wrapper p {
+    text-align: left;
+}
+div.post-wrapper div {
+    height: auto;
+    margin-bottom: 10px;
+}
+div.post-wrapper img {
+    height: 150px;
+    width: auto;
+    margin: 5px;
+}
+div.post-wrapper div.floated {
+    float: right;
+}
+div.post-wrapper div.floated-left {
+    float: left;
+}
+div.feedback-bar {
+    float: left !important;
+    width: 20%;
+    background-color: #19264d !important;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+div.flag-wrapper {
+    position: absolute;
+    height: 80px;
+    width: 100%;
+    right: 0;
+}
+div.flag1 {top: 41%;}
+div.flag2 {bottom: 7%;}
+div.flag-line {
+    border-top: 2px solid #6680cc;
+    height: 100%;
+    float: right;
+}
+div.flag-line1 {width: 40%;}
+div.flag-line2 {width: 20%;}
+div.flag-box-container {
+    float: right;
+    width: 20%;
+}
+div.flag-box-buffer-left {
+    width: 5%;
+    float: right;
+    border-top: 2px solid #6680cc;
+}
+div.flag-box {
+    border: 2px solid #6680cc;
+    border-top-right-radius: 0.3rem; 
+    border-bottom-left-radius:  0.3rem;
+    border-bottom-right-radius:  0.3rem;
+    background-color: #6680cc !important;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.5);
+    width: 90%;
+    font-style: italic;
+    color: antiquewhite;
+    float: right;
+    text-align: left;
+    font-size: 0.8em;
+    padding: 5px;
+}
+div.flag-box:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
+}
+div.flag-box-buffer-right {
+    width: 5%;
+    float: right;    
+}
+
+
+/* ~~ right classroom chat pane ~~ */
+.system-button {
+    height: 10%;
+    width: 50%;
+    float: left;
+    text-align: center;
+    color: #e6e6e6;
+    border-bottom: 0.5px dotted #e6e6e6;
+    padding-top: 5%;
+}
+.system-button:hover {
+    background: #4e5965;
+}
+.system-button span {
+    font-size: 2em;
+}
+div.left-system-button {
+    border-right: 0.5px dotted #e6e6e6;
+}
+.chat-feed {
+    height: 78%;
+    padding: 15px 15px 0px 15px;
+    font-size: 14px;
+    float: left;
+}
+.chat-heading{
+    height: 5%;
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+.right-pane {
+    border: 0.5px dotted #e6e6e6;
+    overflow-y: auto;
+    position: relative;
+    bottom: 0;
+    height: 95%;
+}
+div.right-pane * {
+    margin-bottom: 0;
+}
+div.right-pane p {
+    padding: 5px;
+    color: antiquewhite;
+}
+div.right-pane p.tutor {
+    color: #cdf1fe;
+    font-style: italic;
+}
+div.right-pane p.roger {
+    font-style: italic;
+    color: #ccffcc;
+}
+div.right-pane p.alice {
+    font-style: italic;
+    color: antiquewhite;
+}
+div.right-pane p.timestamp {
+    color: antiquewhite;
+    text-align: center;
+    font-weight: bold; 
+}
+div.right-pane button.post-card {
+    margin: 5px;
+    width: auto;
+    height: auto;
+    padding: 5px 7px 5px 7px;
+}
+
+/* SOURCE https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(254, 254, 254); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(105, 105, 105); 
+}
+/*END SOURCE */
+
+.chat-box {
+    float: left;
+    height: 12%;
+    width: 100%;
+    padding: 0px 15px 15px 15px;
+    margin-bottom: 0 !important;
+    text-align: right;
+}
+.chat-box textarea {
+    width: 100%;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    font-size: 0.8em;
+}
+button.btn.btn-secondary {
+    font-size: 0.8em;
+    border-width: 0;
+    background-color: #6680cc;
+}
+button.btn.btn-secondary:hover {
+    background-color: #5370c6;
+}
+
